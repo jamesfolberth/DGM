@@ -5,7 +5,7 @@ namespace DirectGraphicalModels
 {
 	void CInferChain::calculateMessages(unsigned int)
 	{
-		float *temp = new float[getGraph().getNumNodes()];
+		double *temp = new double[getGraph().getNumNodes()];
 
 		// Forward pass
 		std::for_each(getGraphPairwise().m_vNodes.begin(), getGraphPairwise().m_vNodes.end() - 1, [&](ptr_node_t &node) {

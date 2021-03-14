@@ -22,7 +22,7 @@ namespace DirectGraphicalModels
 		}
 
 
-		float *temp = new float[nStates];
+		double *temp = new double[nStates];
 		while (!nodeQueue.empty()) {
 			//for (size_t q = 0; q < nodeQueue.size(); q++) printf("%d, ", nodeQueue[q]);	printf("\n");
 			

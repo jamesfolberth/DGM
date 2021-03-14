@@ -9,7 +9,7 @@ namespace DirectGraphicalModels
 		
 		// ======================== Main loop (iterative messages calculation) ========================
 #ifndef ENABLE_PPL
-		float *temp = new float[nStates];
+		double *temp = new double[nStates];
 #endif
 		for (unsigned int i = 0; i < nIt; i++) {								// iterations
 #ifdef DEBUG_PRINT_INFO
@@ -18,7 +18,7 @@ namespace DirectGraphicalModels
 #endif
 #ifdef ENABLE_PPL
 			concurrency::parallel_for_each(getGraphPairwise().m_vNodes.begin(), getGraphPairwise().m_vNodes.end(), [&, nStates](ptr_node_t &node) {		// all nodes
-				float *temp = new float[nStates];
+				double *temp = new double[nStates];
 #else
 			std::for_each(getGraphPairwise().m_vNodes.begin(), getGraphPairwise().m_vNodes.end(), [&](ptr_node_t &node) {
 #endif

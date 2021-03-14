@@ -31,6 +31,6 @@ namespace DirectGraphicalModels
 
 	protected:
 		DllExport virtual void	calculateMessages(unsigned int nIt);
-		void					calculateMessage(float* msg, Edge& edge, float* temp, float* data);
+		void					calculateMessage(double* msg, Edge& edge, double* temp, double* data);
 	};
 }

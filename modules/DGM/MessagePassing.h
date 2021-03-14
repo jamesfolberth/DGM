@@ -48,12 +48,12 @@ namespace DirectGraphicalModels
 		* @param[out] dst Destination array for calculated message. Usually \b edge->msg or \b edge->msg_temp.
 		* @param[in] maxSum Flag indicating weather the message must be calculated according to the \a sum-product (false) or \a max-product (true) algorithm.
 		*/
-		void	calculateMessage(const Edge& edge, float* temp, float* dst, bool maxSum = false);
+		void	calculateMessage(const Edge& edge, double* temp, double* dst, bool maxSum = false);
 		/**
 		* @brief Allocates memory for Edge::msg and Edge::msg_temp containers for all edges in the graph
 		* @param val Default value to fill in the Edge::msg and Edge::msg_temp containers 
 		*/
-		void	createMessages(std::optional<float> val = std::nullopt);
+		void	createMessages(std::optional<double> val = std::nullopt);
 		/**
 		* @brief Deletes memory for Edge::msg and Edge::msg_temp containers for all edges in the graph
 		*/
@@ -67,13 +67,13 @@ namespace DirectGraphicalModels
 		* @param edge The %Edge index
 		* @return The pointer to the edge messages
 		*/
-		float*	getMessage(size_t edge);
+		double*	getMessage(size_t edge);
 		/**
 		* @brief Returns the pointer to the edge temp messages
 		* @param edge The %Edge index
 		* @return The pointer to the edge temp messages
 		*/
-		float*	getMessageTemp(size_t edge);
+		double*	getMessageTemp(size_t edge);
 		/**
 		* @brief Specific matrix multiplication
 		* @details This function calculates the result of multiplying square of matrix \b M by vector \b v as following:
@@ -84,11 +84,11 @@ namespace DirectGraphicalModels
 		* @param[in] maxSum Flag indicating weather the \a max-sum multiplication should be performed
 		* @return The sum of all elemts in vector \b dst
 		*/
-		static float MatMul(const Mat& M, const float* v, float* dst, bool maxSum = false);
+		static double MatMul(const Mat& M, const double* v, double* dst, bool maxSum = false);
 
 
 	private:
-		float	* m_msg;			///< Message: Mat(size: nStates x 1; type: CV_32FC1)
-		float	* m_msg_temp;		///< Temp Message: Mat(size: nStates x 1; type: CV_32FC1)
+		double	* m_msg;			///< Message: Mat(size: nStates x 1; type: CV_32FC1)
+		double	* m_msg_temp;		///< Temp Message: Mat(size: nStates x 1; type: CV_32FC1)
 	};
 }
