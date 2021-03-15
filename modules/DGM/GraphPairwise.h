@@ -55,6 +55,9 @@ namespace DirectGraphicalModels
 		friend class CInferLBP;
 		friend class CInferViterbi;
 		friend class CInferTRW;
+        friend class CLogMessagePassing;
+        friend class CInferLogViterbi;
+        friend class CInferLogLBP;
 
         
 	public:

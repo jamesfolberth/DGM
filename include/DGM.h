@@ -66,6 +66,8 @@
 #include "DGM/InferLBP.h"
 #include "DGM/InferTRW.h"
 #include "DGM/InferViterbi.h"
+#include "DGM/InferLogLBP.h"
+#include "DGM/InferLogViterbi.h"
 
 #include "DGM/Decode.h"
 #include "DGM/DecodeExact.h"
